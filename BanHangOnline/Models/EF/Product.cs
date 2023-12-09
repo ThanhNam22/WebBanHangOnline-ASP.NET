@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BanHangOnline.Models.EF
 {
@@ -17,14 +18,18 @@ namespace BanHangOnline.Models.EF
         [StringLength(250)]
         public string Title { get; set; }
         public string Alias { get; set; }
-
+        [StringLength(50)]
         public string ProductCode { get; set; }
 
         public string Description { get; set; }
+        [AllowHtml]
         public string Detail { get; set; }
+        [StringLength(250)]
         public string Image { get; set; }
         public decimal Price { get; set; }
         public decimal PriceSale { get; set; }
+        public bool IsActive { get; set; }
+
         public bool IsHome {  get; set; }
         public bool IsSale { get; set; }
 
@@ -32,8 +37,11 @@ namespace BanHangOnline.Models.EF
         public bool IsHot { get; set; }
         public int Quality { get; set; }
         public int ProductCategoryId { get; set; }
+        [StringLength(250)]
         public string SeoTitle { get; set; }
+        [StringLength(500)]
         public string SeoDescription { get; set; }
+        [StringLength(250)]
         public string SeoKeywords { get; set; }
         public virtual ProductCategory ProductCategory { get; set; }
     }

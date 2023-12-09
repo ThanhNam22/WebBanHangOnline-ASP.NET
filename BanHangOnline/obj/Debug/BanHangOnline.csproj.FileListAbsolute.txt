@@ -113,3 +113,11 @@ D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdateD
 D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdateData1.resources
 D:\DotNet\BanHangOnline\BanHangOnline\bin\CKFinder.dll
 D:\DotNet\BanHangOnline\BanHangOnline\bin\CKFinder.pdb
+D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdateActive.resources
+D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.ChangeLengthModel.resources
+D:\DotNet\BanHangOnline\BanHangOnline\bin\PagedList.dll
+D:\DotNet\BanHangOnline\BanHangOnline\bin\PagedList.Mvc.dll
+D:\DotNet\BanHangOnline\BanHangOnline\bin\PagedList.xml
+D:\DotNet\BanHangOnline\BanHangOnline\bin\PagedList.Mvc.xml
+D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdateProductCategory.resources
+D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdatePC.resources

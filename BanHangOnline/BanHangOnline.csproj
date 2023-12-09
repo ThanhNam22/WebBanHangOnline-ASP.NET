@@ -51,6 +51,12 @@
       <HintPath>Content\ckfinder\bin\Release\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -176,6 +182,9 @@
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -197,6 +206,22 @@
     <Compile Include="Migrations\202312040611433_UpdateData1.cs" />
     <Compile Include="Migrations\202312040611433_UpdateData1.designer.cs">
       <DependentUpon>202312040611433_UpdateData1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312041517591_UpdateActive.cs" />
+    <Compile Include="Migrations\202312041517591_UpdateActive.designer.cs">
+      <DependentUpon>202312041517591_UpdateActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312051333574_ChangeLengthModel.cs" />
+    <Compile Include="Migrations\202312051333574_ChangeLengthModel.designer.cs">
+      <DependentUpon>202312051333574_ChangeLengthModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312090148535_UpdateProductCategory.cs" />
+    <Compile Include="Migrations\202312090148535_UpdateProductCategory.designer.cs">
+      <DependentUpon>202312090148535_UpdateProductCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312090153176_UpdatePC.cs" />
+    <Compile Include="Migrations\202312090153176_UpdatePC.designer.cs">
+      <DependentUpon>202312090153176_UpdatePC.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3020,6 +3045,7 @@
     <Content Include="Content\clients\plugins\uplot\uPlot.iife.js" />
     <Content Include="Content\clients\plugins\uplot\uPlot.iife.min.js" />
     <Content Include="Content\clients\plugins\uplot\uPlot.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -3130,6 +3156,15 @@
     <Content Include="Content\ckeditor\samples\sample_posteddata.php" />
     <Content Include="Content\ckeditor\skins\moono\readme.md" />
     <Content Include="Content\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Posts\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -3220,6 +3255,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312040611433_UpdateData1.resx">
       <DependentUpon>202312040611433_UpdateData1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312041517591_UpdateActive.resx">
+      <DependentUpon>202312041517591_UpdateActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312051333574_ChangeLengthModel.resx">
+      <DependentUpon>202312051333574_ChangeLengthModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312090148535_UpdateProductCategory.resx">
+      <DependentUpon>202312090148535_UpdateProductCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312090153176_UpdatePC.resx">
+      <DependentUpon>202312090153176_UpdatePC.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

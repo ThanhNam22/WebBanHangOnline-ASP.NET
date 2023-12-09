@@ -12,7 +12,7 @@ namespace BanHangOnline.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         // GET: Admin/Category
-        ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
         public ActionResult Index()
         {
             var items = db.Categories.ToList();
