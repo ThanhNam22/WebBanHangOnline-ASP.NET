@@ -34,5 +34,6 @@ namespace BanHangOnline.Models.EF
 
         public string Icon { get; set; }
         public ICollection<Product> Products { get; set; }
+
     }
 }

@@ -38,6 +38,8 @@ namespace BanHangOnline.Models
         public DbSet<OrderDetail> orderDetails { get; set; }
         public DbSet<Posts> Posts { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ProductImage> ProductImages { get; set; }
+
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Subscribe> Subscribe { get; set; }
         public DbSet<SystemSetting> SystemSettings { get; set; }

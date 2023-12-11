@@ -184,6 +184,7 @@
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\PostsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -222,6 +223,14 @@
     <Compile Include="Migrations\202312090153176_UpdatePC.cs" />
     <Compile Include="Migrations\202312090153176_UpdatePC.designer.cs">
       <DependentUpon>202312090153176_UpdatePC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312110532455_UdatePI.cs" />
+    <Compile Include="Migrations\202312110532455_UdatePI.designer.cs">
+      <DependentUpon>202312110532455_UdatePI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312110546181_Udate1211.cs" />
+    <Compile Include="Migrations\202312110546181_Udate1211.designer.cs">
+      <DependentUpon>202312110546181_Udate1211.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -3049,6 +3058,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\autoNumeric-1.9.45.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -3136,7 +3146,6 @@
     <Content Include="Content\clients\plugins\summernote\summernote.min.js.map" />
     <Content Include="Content\clients\plugins\toastr\toastr.js.map" />
     <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_PartiaSideBar.cshtml" />
     <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
@@ -3165,17 +3174,28 @@
     <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Add.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductImage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutEmpty.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
-    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="obj\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Uploads\files\2023-12-05_7-58-08-740-1701738608-655-width740height416.jpg" />
+    <Content Include="Uploads\files\aspnetcore-developer-roadmap.png" />
+    <Content Include="Uploads\files\Screenshot 2023-11-12 214717.png" />
+    <Content Include="Uploads\images\2023-12-05_7-58-08-740-1701738608-655-width740height416.jpg" />
+    <Content Include="Uploads\_thumbs\Files\2023-12-05_7-58-08-740-1701738608-655-width740height416.jpg" />
+    <Content Include="Uploads\_thumbs\Files\aspnetcore-developer-roadmap.png" />
+    <Content Include="Uploads\_thumbs\Files\Screenshot 2023-11-12 214717.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -3215,6 +3235,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Content\ckfinder\userfiles\" />
+    <Folder Include="Uploads\flash\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -3267,6 +3288,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202312090153176_UpdatePC.resx">
       <DependentUpon>202312090153176_UpdatePC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312110532455_UdatePI.resx">
+      <DependentUpon>202312110532455_UdatePI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312110546181_Udate1211.resx">
+      <DependentUpon>202312110546181_Udate1211.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

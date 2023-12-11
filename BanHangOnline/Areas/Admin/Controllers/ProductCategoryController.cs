@@ -81,9 +81,9 @@ namespace BanHangOnline.Areas.Admin.Controllers
             {
                 db.ProductCategories.Remove(item);
                 db.SaveChanges();
-                return Json(new { success = true });
+                return Json(new { Success = true });
             }
-            return Json(new { success = false });
+            return Json(new { Success = false });
 
         }
         
@@ -102,10 +102,10 @@ namespace BanHangOnline.Areas.Admin.Controllers
                         db.SaveChanges();
                     }
                 }
-                return Json(new { success = true });
+                return Json(new { Success = true });
 
             }
-            return Json(new { success = false });
+            return Json(new { Success = false });
 
         }
     }

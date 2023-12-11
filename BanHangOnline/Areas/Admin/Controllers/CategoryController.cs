@@ -77,9 +77,9 @@ namespace BanHangOnline.Areas.Admin.Controllers
                 /*var DeleteItem = db.Categories.Attach(item);*/
                 db.Categories.Remove(item);
                 db.SaveChanges();
-                return Json(new {success=true});
+                return Json(new {Success=true});
             }
-            return Json(new {success=false});
+            return Json(new {Success=false});
         }
     }
 }

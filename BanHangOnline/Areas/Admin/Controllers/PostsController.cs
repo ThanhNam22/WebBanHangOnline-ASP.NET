@@ -83,9 +83,9 @@ namespace BanHangOnline.Areas.Admin.Controllers
             {
                 db.Posts.Remove(item);
                 db.SaveChanges();
-                return Json(new { success = true });
+                return Json(new { Success = true });
             }
-            return Json(new { success = false });
+            return Json(new { Success = false });
 
         }
         [HttpPost]
@@ -99,7 +99,7 @@ namespace BanHangOnline.Areas.Admin.Controllers
                 db.SaveChanges();
                 return Json(new { success = true, isActive = item.IsActive });
             }
-            return Json(new { success = false });
+            return Json(new { Success = false });
 
         }
         [HttpPost]
@@ -117,10 +117,10 @@ namespace BanHangOnline.Areas.Admin.Controllers
                         db.SaveChanges();
                     }
                 }
-                return Json(new { success = true });
+                return Json(new { Success = true });
 
             }
-            return Json(new { success = false });
+            return Json(new { Success = false });
 
         }
     }

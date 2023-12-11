@@ -121,3 +121,5 @@ D:\DotNet\BanHangOnline\BanHangOnline\bin\PagedList.xml
 D:\DotNet\BanHangOnline\BanHangOnline\bin\PagedList.Mvc.xml
 D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdateProductCategory.resources
 D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UpdatePC.resources
+D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.UdatePI.resources
+D:\DotNet\BanHangOnline\BanHangOnline\obj\Debug\BanHangOnline.Migrations.Udate1211.resources

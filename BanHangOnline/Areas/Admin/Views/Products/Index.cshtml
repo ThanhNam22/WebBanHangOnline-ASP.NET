@@ -20,6 +20,8 @@
         </li>
     </ul>
 }
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -53,12 +55,12 @@
         <div class="card-body">
             <!--<div class="row">
                 <div class="col-10">-->
-                    @*@using (Html.BeginForm("Index", "Products", FormMethod.Get, new { }))*@
-                    <!--{
-                        <div class="input-group input-group-sm">-->
-                            @*@Html.TextBox("Searchtext")*@
-                            <!--<!---->@*<input type="text" name="searchtext" class="form-control">*@
-                            <!--<span class="input-group-append">
+            @*@using (Html.BeginForm("Index", "Products", FormMethod.Get, new { }))*@
+            <!--{
+                <div class="input-group input-group-sm">-->
+            @*@Html.TextBox("Searchtext")*@
+            <!--<!---->@*<input type="text" name="searchtext" class="form-control">*@
+            <!--<span class="input-group-append">
                                 <button type="submit" class="btn btn-info btn-flat">Tìm kiếm</button>
                             </span>
                         </div>
@@ -92,7 +94,7 @@
                             <tr id="trow_@item.Id">
                                 <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                 <td>@i</td>
-                                <td><img src="@item.Image" width="50" /></td>
+                                <td><img class="imgproduct" data-id="@item.Id" src="@item.ProductImage.FirstOrDefault(x=>x.IsDefault).Image" width="50" /></td>
                                 <td>@item.Title</td>
                                 <td>@item.ProductCategory.Title</td>
                                 <td>@item.Quality</td>
@@ -103,7 +105,7 @@
                                 </td>
 
                                 <td>
-                                    <a href="/admin/news/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
+                                    <a href="/admin/products/edit/@item.Id" class="btn btn-sm btn-primary">Sửa</a>
                                     <a href="#" data-id="@item.Id" class="btn btn-sm btn-danger btnDelete">Xóa</a>
                                 </td>
                             </tr>
@@ -137,10 +139,34 @@
 
 </section>
 <!-- /.content -->
-
+<div id="dialog">
+    <iframe id="mIframe" style="border: 0;width: 100%;height: 100%;"></iframe>
+</div>
 @section scripts{
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
         $(document).ready(function () {
+            //Hiển thị form upload ảnh
+            $("#dialog").dialog({
+                autoOpen: false,
+                show: "fade",
+                hide: "fade",
+                modal: true,
+                height: '600',
+                width: '700',
+                resizable: true,
+                title: 'Quản lý ảnh sản phẩm',
+                close: function () {
+                    window.location.reload();
+                }
+            });
+            $('body').on('click', '.imgproduct', function () {
+                var proid = $(this).attr("data-id");
+                $("#dialog #mIframe").attr("src", "/admin/ProductImage/Index?id=" + proid);
+                $('#dialog').dialog('open');
+                return false;
+            });
+
             $('body').on('click', '#BtnDeleteAll', function (e) {
                 e.preventDefault();
                 var str = "";
@@ -220,10 +246,10 @@
                         if (rs.success) {
                             debugger;
                             if (rs.isActive) {
-                                btn.html("<i class = 'fa fa-check text-success'></i>");
+                                btn.html("<i class='fa fa-check text-success'></i>");
                             }
                             else {
-                                btn.html("<i class = 'fas fa-times text-danger'></i>");
+                                btn.html("<i class='fas fa-times text-danger'></i>");
 
                             }
                         }
