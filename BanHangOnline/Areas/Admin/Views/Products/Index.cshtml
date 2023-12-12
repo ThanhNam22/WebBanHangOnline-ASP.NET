@@ -79,9 +79,9 @@
                         <th>Số lượng</th>
                         <th>Giá</th>
                         <th>Ngày tạo</th>
+                        <th>Home</th>
+                        <th>Sale</th>
                         <th>Hiển thị</th>
-                        <th style="width:150px"></th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -91,15 +91,24 @@
                         foreach (var item in Model)
                         {
                             var strCheck = item.IsActive ? "<i class = 'fa fa-check text-success'></i>" : "<i class = 'fas fa-times text-danger'></i>";
+                            var strCheckHome = item.IsHome ? "<i class = 'fa fa-check text-success'></i>" : "<i class = 'fas fa-times text-danger'></i>";
+                            var strCheckSale = item.IsSale ? "<i class = 'fa fa-check text-success'></i>" : "<i class = 'fas fa-times text-danger'></i>";
+
                             <tr id="trow_@item.Id">
                                 <td><input type="checkbox" class="cbkItem" value="@item.Id" /></td>
                                 <td>@i</td>
                                 <td><img class="imgproduct" data-id="@item.Id" src="@item.ProductImage.FirstOrDefault(x=>x.IsDefault).Image" width="50" /></td>
                                 <td>@item.Title</td>
                                 <td>@item.ProductCategory.Title</td>
-                                <td>@item.Quality</td>
+                                <td class="text-center">@item.Quality</td>
                                 <td>@item.Price</td>
                                 <td>@item.CreateDate.ToString("dd/MM/yyyy")</td>
+                                <td class="text-center">
+                                    <a href="#" data-id="@item.Id" class="btnHome">@Html.Raw(strCheckHome)</a>
+                                </td>
+                                <td class="text-center">
+                                    <a href="#" data-id="@item.Id" class="btnSale">@Html.Raw(strCheckSale)</a>
+                                </td>
                                 <td class="text-center">
                                     <a href="#" data-id="@item.Id" class="btnActive">@Html.Raw(strCheck)</a>
                                 </td>
@@ -229,7 +238,6 @@
                             if (rs.success) {
                                 $('#trow_' + id).remove();
                             }
-
                         }
                     });
                 }
@@ -244,7 +252,6 @@
                     data: { id: id },
                     success: function (rs) {
                         if (rs.success) {
-                            debugger;
                             if (rs.isActive) {
                                 btn.html("<i class='fa fa-check text-success'></i>");
                             }
@@ -254,6 +261,46 @@
                             }
                         }
 
+                    }
+                });
+            });
+            $('body').on('click', '.btnHome', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/admin/products/IsHome',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.isHome) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                            }
+                        }
+                    }
+                });
+            });
+            $('body').on('click', '.btnSale', function (e) {
+                e.preventDefault();
+                var btn = $(this);
+                var id = btn.data("id");
+                $.ajax({
+                    url: '/admin/products/IsSale',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            if (rs.isSale) {
+                                btn.html("<i class='fa fa-check text-success'></i>");
+                            }
+                            else {
+                                btn.html("<i class='fas fa-times text-danger'></i>");
+                            }
+                        }
                     }
                 });
             });

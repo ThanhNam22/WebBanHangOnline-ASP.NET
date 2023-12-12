@@ -49,22 +49,12 @@ namespace BanHangOnline.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Categories.Attach(model);
                 model.ModifiedDate = DateTime.Now;
                 model.Alias = BanHangOnline.Models.Common.Filter.FilterChar(model.Title);
-                db.Entry(model).Property(x=>x.Title).IsModified=true;
-                db.Entry(model).Property(x=>x.Description).IsModified=true;
-                db.Entry(model).Property(x => x.Alias).IsModified = true;
-                db.Entry(model).Property(x => x.SeoTitle).IsModified = true;
-                db.Entry(model).Property(x => x.SeoDescription).IsModified = true;
-                db.Entry(model).Property(x => x.SeoKeywords).IsModified = true;
-                db.Entry(model).Property(x => x.Modifiedby).IsModified = true;
-                db.Entry(model).Property(x => x.ModifiedDate).IsModified = true;
-
-
+                db.Categories.Attach(model);
+                db.Entry(model).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
-
             }
             return View(model);
         }
